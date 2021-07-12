@@ -1,0 +1,51 @@
+[
+    {"mode":"work",
+    "context":[
+{
+    "phrase":"No Gods Or Kings,Only Man",
+    "author":"Andrew Ryan — Bioshock"
+},
+
+{
+    "phrase":"A Man Chooses,A Slave Obey",
+    "author":"Andrew Ryan — Bioshock"
+},
+
+{
+    "phrase":"To see a world in a grain of sand,and a heaven in a wild flower,hold infinte in a palm of your hand,and enternity in an hour.",
+    "author":"William Blake"
+}
+    ]},
+
+    {"mode":"rest",
+        "context":[
+    {
+        "phrase":"Just Relaxing B**ch",
+        "author":"Jesus"
+    },
+    {
+        "phrase":"Go play Zelda",
+        "author":"Jesus"
+    }
+    
+   
+        ]},
+        {"mode":"studt",
+            "context":[
+        {
+            "phrase":"Just Relaxing B**ch",
+            "author":"Jesus"
+        },
+        
+        {
+            "phrase":"A Man Chooses,A Slave Obey",
+            "author":"Andrew Ryan—Bioshock"
+        },
+        
+        {
+            "phrase":"To see a world in a grain of sand,and a heaven in a wild flower,hold infinte in a palm of your hand,and enternity in an hour.",
+            "author":"William Blake"
+        }
+            ]}
+
+]

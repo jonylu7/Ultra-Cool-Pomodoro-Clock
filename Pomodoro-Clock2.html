@@ -1,0 +1,60 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+            <title>TimerThing2</title>
+        </head>
+        <body class="background waitmode_bg" id="bg">
+           
+            <link rel="stylesheet" type="text/css" href="p2.css"></link>
+
+           <div class="wait_background" id="wbg">
+               <h1>Clock Stuff</h1>
+               <input type='button' value="Let's Go!" onclick="start()" class="btn_start">
+               <h2>Made By hah_lu</h2>
+           </div>
+
+
+
+            <div  class="main_background workmode_content_area disapear" id="mbg">
+                <div class="change_status">
+                    <table>
+                    <input type='button' value="work" onclick="change_stat(this.value)" class="btn_c">
+                    <input type='button' value="study" onclick="change_stat(this.value)" class="btn_c">
+                    <input type='button' value="short break" onclick=change_stat(this.value) class="btn_c">
+                    <input type='button' value="long break" onclick="change_stat(this.value)" class="btn_c">
+                </tr>
+            </table>
+                </div>
+                
+                        
+            <div class="content_area">
+            <div class='time_area'> 
+                <p class="clock_time hr"></p>
+                <p class="clock_time">:</p>
+                <p class="clock_time min"></p>
+                <p class="clock_time">:</p>
+            <p class="clock_time sec"></p>
+        </div>
+           
+
+        <div class="">
+
+        </div>
+            
+            </div>
+            <div id="circle area"></div>
+            <div class="button_area">
+            <input type='button' value="start" onclick="start_timer()" class="btn-primary disapear" id="stbtn">
+            <input type='button' value="pause" onclick="pause_timer()" class="btn-primary" id="psbtn">
+            <div>
+               
+                </div>    
+        </div>
+            
+        </div>
+        </div>
+            
+            <script src="P2.JS"></script>
+        </body>
+</html>
