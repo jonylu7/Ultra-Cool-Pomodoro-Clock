@@ -1,1 +1,88 @@
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+        </script>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <title>TimerThing2</title>
+        </head>
+        <body class="background waitmode_bg" id="bg">
+           
+            <link rel="stylesheet" type="text/css" href="p2.css"></link>
+
+           <div class="wait_background" id="wbg">
+               <h1>Clock Stuff</h1>
+               <input type='button' value="Let's Go!" onclick="start()" class="btn_start">
+               <h2>Made By hah_lu</h2>
+           </div>
+
+           <span id="addpanel"></span>
+<div id="Endpanel"></div>
+            <div  class="main_background workmode_content_area disapear" id="mbg">
+                <div class="change_status">
+                    <table>
+                        <tr id="statepanel">
+                    <input type='button' value="work" onclick="change_stat(this.value)" class="btn_c">
+                    <input type='button' value="study" onclick="change_stat(this.value)" class="btn_c">
+                    <input type='button' value="short break" onclick=change_stat(this.value) class="btn_c">
+                    <input type='button' value="long break" onclick="change_stat(this.value)" class="btn_c">
+                   
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <button onclick="addstuff()" class="btn_c">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                          </svg>
+                        </button>
+                    </tr>
+                </table>
+            </div>
+                
+                
+                        
+            <div class="content_area">
+            <div class='time_area'> 
+                <p class="clock_time hr"></p>
+                <p class="clock_time">:</p>
+                <p class="clock_time min"></p>
+                <p class="clock_time">:</p>
+            <p class="clock_time sec"></p>
         </div>
+
+        <div class="">
+
+        </div>
+            
+            </div>
+            <div id="circle area"></div>
+            <div class="button_area">
+
+            <button onclick="start_timer()" class="btn_c disapear" id="stbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+              </svg>
+              </button>
+            <button onclick="pause_timer()" class="btn_c" id="psbtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+                    <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+                  </svg>
+                </button>
+            <button  onclick="END()" class="btn_c">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg>
+            </button>
+               
+                </div>    
+        </div>
+            
+        </div>
+        </div>
+            
+            <script src="P2.JS"></script>
+        </body>
+</html>
