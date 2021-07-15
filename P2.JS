@@ -87,14 +87,43 @@ function pause_timer(){
 
 
 
+function END(){
+    var ENDpanel=document.getElementById("Endpanel");
+    pause_timer();
+    ENDpanel.innerHTML=`<div class="addpanel">
+    <div>
+    `;
+    mbg.classList.add("hidden");
+}
 
 
+function add(){
+const newevent=document.querySelector('#newevent');
+const statepanel=document.querySelector('#statepanel');
+
+statepanel.innerHTML+=`<input type='button' value="${newevent.value}" onclick="change_stat(this.value)" class="btn_c">`
+
+}
 
 
+function addstuff(){
+    var panel=document.getElementById("addpanel");
+    pause_timer();
+    panel.innerHTML=`<div class="addpanel">
+    <input type="button" value="x" onclick="shutpanel()" id="x">
+    <input type="input box" value="Put in your Event" id="newevent">
+    <input type="button" value="Add" onclick="add()" id="x">
+    <div>
+    `;
+    mbg.classList.add("hidden");
 
+}
 
-
-
+function shutpanel(){
+    var panel=document.getElementById("addpanel");
+    panel.innerHTML="";
+    mbg.classList.remove("hidden");
+}
 function clear_timer(){
     
     
@@ -148,30 +177,30 @@ function change_stat(v){
     if(v=="work"){
         mbg.classList.add('workmode_content_area');
         bg.classList.add('workmode_bg');
-        countdmin=worktime;
+        //countdmin=worktime;
 
     }else if(v=="short break"){
         mbg.classList.add('restmode_content_area');
         bg.classList.add('restmode_bg');
-        countdmin=shortbreak;
+        //countdmin=shortbreak;
 
     }else if(v=="study"){
         mbg.classList.add('studymode_content_area');
         bg.classList.add('studymode_bg');
-        countdmin=studytime;
+        //countdmin=studytime;
     }
 
     else if(v=="long break"){
         mbg.classList.add('restmode_content_area2');
         bg.classList.add('restmode_bg2');
-        countdmin=longbreak;
+        //countdmin=longbreak;
     }
     
     if(String(countdmin).length==1){countdmin="0"+String(countdmin);}
-     showmin.innerHTML=countdmin;
+     //showmin.innerHTML=countdmin;
      countdsec=0;
      if(String(countdsec).length==1){countdsec="0"+String(countdsec);}
-     showsec.innerHTML=countdsec;
+     //showsec.innerHTML=countdsec;
         ori_status=v;
 
 

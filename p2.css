@@ -1,5 +1,25 @@
+.addpanel {
+  background-color: rgba(88, 90, 90, 0.932);
+  opacity: 50%;
+  border-radius: 2%;
+  margin: auto;
+  padding: 10%;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#x {
+  position: relative;
+  margin-top: 1px;
+}
+.hidden {
+  filter: blur(8px);
+}
 .workmode_content_area {
-  background-color: #D64A68(30, 133, 218, 0.932);
+  background-color: #d64a68;
 }
 
 .studymode_content_area {
@@ -11,7 +31,7 @@
 }
 
 .restmode_content_area2 {
-  background-color: rgba(216, 112, 160, 0.932);
+  background-color: rgba(236, 228, 232, 0.932);
 }
 
 .workmode_bg {
@@ -37,7 +57,7 @@
   border-radius: 2%;
   margin: auto;
   width: 50%;
-  height: 50%;
+  height: 60%;
   padding: 10px;
 }
 .clock_time {
@@ -160,44 +180,30 @@
   color: white;
   border: 2px solid white;
 }
-
 .btn_c {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.5;
-  color: #ecf0f3;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   background-color: transparent;
-  border: 2px solid #90b0cb;
+  border: 2px solid #ffffff00;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 1.35rem;
 }
 
 .btn_c:hover {
-  background-color: #24567f; /* Green */
-  color: white;
-  border: 2px solid white;
+  background-color: #ffffff70;
 }
-@media (prefers-reduced-motion: reduce) {
-  .btn_c {
-    transition: none;
-  }
-}
-.btn_c:hover {
-  background-color: #007efc;
-}
+
 .btn-check:focus + .btn_c,
 .btn_c.toggleon {
-  background-color: #007efc;
+  background-color: #ffffff70;
 }
 .btn_c:disabled,
 .btn_c.disabled,
