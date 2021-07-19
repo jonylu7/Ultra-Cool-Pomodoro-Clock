@@ -1,2 +1,2 @@
 # Ultra-Cool-Pomodoro-Clock
-Hi
+Enjoy Using This Clock

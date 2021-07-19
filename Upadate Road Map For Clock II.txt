@@ -1,0 +1,21 @@
+Function Road Map for Clock II
+
+V1.0
+1.Fixed Timer
+2.Fixed Some Bugs
+3.Fixed UI color problem
+4.Fixed User Added Task's typesetting
+5.Individual timer
+6.More local storage things
+
+
+V1.2
+1.Qoutes Panel
+2.Custimizable Qoutes
+3.User Customize Color
+
+V2.0
+1.Fixed More Bugs
+2.Publish
+3.More Qoutes
+4.

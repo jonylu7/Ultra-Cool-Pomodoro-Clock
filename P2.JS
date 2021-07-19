@@ -25,7 +25,7 @@ var showsec=document.querySelector(".sec");
 showhr.innerHTML="00";
 showmin.innerHTML="00";
 showsec.innerHTML="00";
-var x;
+var x,w;
 var alltime=0;
 
 
@@ -154,15 +154,18 @@ function clear_timer(){
 var localhr=0;
 var localmin=0;
 var localsec=0;
-var w;
+
 function startlocaltimer(v){
+    clearInterval(w);
     console.log(storagelist.hasOwnProperty(v.id));
-if (localhr==0&&localmin==0&&localsec==0){
     if(storagelist.hasOwnProperty(v.id)){
             localhr=storagelist[v.id].thr;
             localmin=storagelist[v.id].tmin;
             localsec=storagelist[v.id].tsec;
             console.log(storagelist[v.id]);
+        }else{
+            storagelist[v.id]={"thr":0,"tmin":0,"tsec":0};
+            localhr,localmin,localsec=0;
         };
     w=setInterval(function tiktok(){
 
@@ -186,22 +189,15 @@ if (localhr==0&&localmin==0&&localsec==0){
         //showsec.innerHTML=countdsec;
 v.value=v.id+showt;
     },1000);
-
-}else{
-    StoreThings(v.id,localhr,localmin,localsec);
-    clearInterval(w);
-    localhr,localmin,localsec=0;
-    console.log(localhr,localmin,localsec);
-    startlocaltimer(v);
-
-}
-
+    
 }
 
 
 
 function change_stat(v){
-
+    if(ori_status!=v.id){
+        StoreThings(ori_status,localhr,localmin,localsec);
+    }
     console.log(v);
     v.classList.add('toggleon');
     startlocaltimer(v);
