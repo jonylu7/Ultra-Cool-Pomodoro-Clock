@@ -68,6 +68,7 @@ function alltik(){
     if(String(timemin).length==1){showmin.innerHTML="0"+String(timemin);}else{showmin.innerHTML=timemin;}
     if(String(timesec).length==1){showsec.innerHTML="0"+String(timesec);}else{showsec.innerHTML=timesec;}
     if(String(timehr).length==1){timehr.innerHTML="0"+String(timehr);}else{showhr.innerHTML=timehr;}
+return(timehr,timemin,timesec);
 }
 
 function start_timer(){
@@ -96,12 +97,18 @@ function END(){
     mbg.classList.add("hidden");
 }
 
+var storagelist={};
+function StoreThings(id,thr,tmin,tsec){
+    storagelist[id]={thr,tmin,tsec};
+    localStorage.setItem("main",JSON.stringify(storagelist));
+
+}
 
 function add(){
 const newevent=document.querySelector('#newevent');
 const statepanel=document.querySelector('#statepanel');
 
-statepanel.innerHTML+=`<input type='button' value="${newevent.value}" onclick="change_stat(this.value)" class="btn_c">`
+statepanel.innerHTML+=`<input type='button' value="${newevent.value}" onclick="change_stat(this)" class="btn_c" id="${newevent.value}">`
 
 }
 
@@ -144,22 +151,71 @@ function clear_timer(){
      pause_timer();
 }
 
+var localhr=0;
+var localmin=0;
+var localsec=0;
+var w;
+function startlocaltimer(v){
+    console.log(storagelist.hasOwnProperty(v.id));
+if (localhr==0&&localmin==0&&localsec==0){
+    if(storagelist.hasOwnProperty(v.id)){
+            localhr=storagelist[v.id].thr;
+            localmin=storagelist[v.id].tmin;
+            localsec=storagelist[v.id].tsec;
+            console.log(storagelist[v.id]);
+        };
+    w=setInterval(function tiktok(){
+
+        if(localsec>=60){
+            localsec=0;
+            localmin+=1;
+        }
+        if(localmin>=60){
+            localhr+=1;
+            localmin=0;
+        }
+        if(localhr>=24){
+            alert("Give Me A Break");
+        }
+        localsec+=1;
+        var showt=" ";
+        if(String(localmin).length==1){showt+="0"+String(localmin);}else{showt+=localmin;}
+        //showmin.innerHTML=countdmin;
+        showt+=":"
+        if(String(localsec).length==1){showt+="0"+String(localsec);}else{showt+=localsec;}
+        //showsec.innerHTML=countdsec;
+v.value=v.id+showt;
+    },1000);
+
+}else{
+    StoreThings(v.id,localhr,localmin,localsec);
+    clearInterval(w);
+    localhr,localmin,localsec=0;
+    console.log(localhr,localmin,localsec);
+    startlocaltimer(v);
+
+}
+
+}
+
+
 
 function change_stat(v){
-    var btnon=document.querySelector(`[value="${v}"]`);
-    btnon.classList.add('toggleon');
 
-    var oldbtn=document.querySelector(`[value="${ori_status}"]`);
+    console.log(v);
+    v.classList.add('toggleon');
+    startlocaltimer(v);
+    var oldbtn=document.getElementById(ori_status);
     oldbtn.classList.remove('toggleon');
 
-    console.log(btnon);
+   
     clearInterval(x);
     console.log(v);
     count_status=v;
     
     const mbg=document.getElementById('mbg');
     const bg=document.getElementById('bg');
-    if(v!=ori_status){
+    if(v.id!=ori_status){
     if(ori_status=="work"){
         mbg.classList.remove('workmode_content_area');
         bg.classList.remove('workmode_bg');
@@ -174,35 +230,29 @@ function change_stat(v){
         bg.classList.remove('studymode_bg');
     }
 }
-    if(v=="work"){
+    if(v.id=="work"){
         mbg.classList.add('workmode_content_area');
         bg.classList.add('workmode_bg');
         //countdmin=worktime;
 
-    }else if(v=="short break"){
+    }else if(v.id=="short break"){
         mbg.classList.add('restmode_content_area');
         bg.classList.add('restmode_bg');
         //countdmin=shortbreak;
 
-    }else if(v=="study"){
+    }else if(v.id=="study"){
         mbg.classList.add('studymode_content_area');
         bg.classList.add('studymode_bg');
         //countdmin=studytime;
     }
 
-    else if(v=="long break"){
+    else if(v.id=="long break"){
         mbg.classList.add('restmode_content_area2');
         bg.classList.add('restmode_bg2');
         //countdmin=longbreak;
     }
+
     
-    if(String(countdmin).length==1){countdmin="0"+String(countdmin);}
-     //showmin.innerHTML=countdmin;
-     countdsec=0;
-     if(String(countdsec).length==1){countdsec="0"+String(countdsec);}
-     //showsec.innerHTML=countdsec;
-        ori_status=v;
-
-
-
+        ori_status=v.id;
+        
 }
